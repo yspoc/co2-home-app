@@ -21,13 +21,6 @@ COPY app/ app/
 # .dockerignoreを作成していない場合、明示的にテストをコピーしないようにする
 # COPY . . # (このコマンドを避けるため、今回は app/ のみをコピー)
 
-# 6. アプリケーションの実行コマンド (Cloud Run向け)
-# Gunicornを使ってUvicorn Workerを起動するのが一般的な本番環境の設定です。
-# -w N: Workerプロセスの数 (通常は CPUコア数 * 2 + 1 または 2~4)
-# -b 0.0.0.0:8080: 外部からのアクセスを受け付けるホストとポート
-# app.main:app: 実行するASGIアプリケーション (app/main.py内の appインスタンス)
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8080", "--workers", "4"]
-
 # 6. アプリケーションの実行コマンド (Gunicorn + Uvicorn Worker 構成)
 # Gunicornを起動し、Uvicornワーカーで app/main.py の 'app' オブジェクトを実行します。
 # Gunicornは、Cloud Runが自動設定する環境変数 $PORT をリッスンします。
