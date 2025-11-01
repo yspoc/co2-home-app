@@ -1,0 +1,13 @@
+# requirements.txt
+
+# API
+fastapi
+pydantic
+uvicorn[standard] # uvicorn: ASGIサーバー (FastAPI実行用), [standard]: 高速化に必要な依存関係を含む
+
+# Testing
+pytest
+httpx # FastAPI TestClientが内部で利用
+
+# Production
+gunicorn
