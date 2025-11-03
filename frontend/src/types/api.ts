@@ -43,11 +43,9 @@ export interface MonthlyEmissionSummary {
 
 // バッチ計算レスポンス全体の型
 export interface BatchCalculationResponse {
-  target_fiscal_year: number;
-  monthly_summaries: MonthlyEmissionSummary[]; // 12ヶ月分の排出量サマリ
-  emission_total_annual: number; // 年間合計排出量 (t-CO2)
-  app_version: string;
-}
+  factors_version: string; // 係数バージョン
+  annual_total_co2_kg: number; // 年間合計排出量 (kg-CO2)
+  monthly_summaries: MonthlyEmissionSummary[];}
 
 // =======================================================================
 // 3. 排出係数設定の型定義 (POWER_EMISSION_FACTORS)

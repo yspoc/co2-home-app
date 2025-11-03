@@ -143,7 +143,7 @@ const AnnualInputTable: React.FC = () => {
       {/* 結果表示 (次のステップでMonthlyResultsコンポーネントに置き換え) */}
       {results && (
         <div className="mt-8 p-4 border rounded-lg bg-green-50">
-          <h3 className="text-lg font-bold mb-2">年間合計排出量: {results.emission_total_annual.toFixed(3)} t-CO2</h3>
+          <h3 className="text-lg font-bold mb-2">年間合計排出量: {(results.annual_total_co2_kg / 1000).toFixed(3)} t-CO2</h3>
           <p className="text-sm text-gray-600">（詳細はコンソールを確認してください）</p>
         </div>
       )}
