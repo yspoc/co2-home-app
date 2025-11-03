@@ -16,7 +16,8 @@ origins = [
     # npm run devで開発サーバー起動時に示され、ブラウザで開く 127.0.0.1:5173 を追加)
     "http://127.0.0.1:5173",
     "http://localhost:5173", # 念のため localhost も追加
-    # 本番デプロイ後にフロントエンドのURLを追加する
+    # フロントエンドの本番URL
+    "https://co2-home-app-frontend-453499863155.asia-northeast1.run.app",
 ]
 
 app.add_middleware(
