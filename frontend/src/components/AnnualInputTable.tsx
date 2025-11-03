@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useMemo } from 'react';
+import React, { useState, useCallback } from 'react';
 import type { MonthlyActivity, BatchCalculationRequest, BatchCalculationResponse } from '../types/api';
 import { POWER_FACTORS_CONFIG } from '../config/powerFactors';
 import { MonthlyInputRow } from './MonthlyInputRow.tsx'; // ステップ5で作成
@@ -72,7 +72,7 @@ const AnnualInputTable: React.FC = () => {
     };
 
     try {
-      const apiUrl = 'https://co2-calculator-service-453499863155.asia-northeast1.run.app/api/v1/calculate_fiscal_year'; // <--- ★あなたのデプロイURLに合わせて修正
+      const apiUrl = 'https://co2-calculator-api-453499863155.asia-northeast1.run.app/api/v1/calculate_fiscal_year'; // <--- ★あなたのデプロイURLに合わせて修正
       const response = await fetch(apiUrl, {
         method: 'POST',
         headers: {
